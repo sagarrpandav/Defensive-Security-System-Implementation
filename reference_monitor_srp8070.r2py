@@ -30,20 +30,20 @@ class ABFile():
 
     # make the files and add 'SE' to the readat file...
     if create:
-      self.Afile = openfile(self.Afn,create)
-      self.Bfile = openfile(self.Bfn,create)
-      if self.Afn in listfiles():
-        self.Bfile.writeat(self.Afile.readat(None, 0), 0)
-      else:
-        self.Afile.writeat('SE',0)
+        self.Afile = openfile(self.Afn,create)
+        self.Bfile = openfile(self.Bfn,create)
+        if self.Afn in listfiles():
+            self.Bfile.writeat(self.Afile.readat(None, 0), 0)
+        else:
+            self.Afile.writeat('SE',0)
     else:
-      if self.Afn in listfiles():
-        self.Afile = openfile(self.Afn, True)
-        self.Bfile = openfile(self.Bfn, True)
-        self.Bfile.writeat(self.Afile.readat(None, 0), 0)
-      else:
-        self.Afile = openfile(self.Afn, False)
-        self.Bfile = openfile(self.Bfn, False)
+        if self.Afn in listfiles():
+            self.Afile = openfile(self.Afn, True)
+            self.Bfile = openfile(self.Bfn, True)
+            self.Bfile.writeat(self.Afile.readat(None, 0), 0)
+        else:
+            self.Afile = openfile(self.Afn, False)
+            self.Bfile = openfile(self.Bfn, False)
 
 
   def writeat(self,data,offset):
