@@ -87,7 +87,7 @@ class ABFile():
         removefile(sef.Bfn)
 
     else:
-        removefile(self.Afn, True)
+        removefile(self.Afn)
         newFile = openfile(self.Afn, True)
         newFile.writeat(aData, 0)
         removefile(sef.Bfn)
