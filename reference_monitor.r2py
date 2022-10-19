@@ -74,8 +74,23 @@ class ABFile():
             raise RepyArgumentError
 
   def close(self):
+    aData = self.Afile.readat(None, 0)
+    bData = self.Bfile.readat(None, 0)
+    backupData = self.Afn
     self.Afile.close()
     self.Bfile.close()
+
+    if (bData[0] == 'S' and bData[len[bData] - 1] == 'E'):
+        removefile(self.Afn)
+        newFile = openfile(self.Afn, True)
+        newFile.writeat(bData, 0)
+        removefile(sef.Bfn)
+
+    else:
+        removefile(self.Afn, True)
+        newFile = openfile(self.Afn, True)
+        newFile.writeat(aData, 0)
+        removefile(sef.Bfn)
 
 
 def ABopenfile(filename, create):
