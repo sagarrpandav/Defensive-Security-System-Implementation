@@ -80,7 +80,7 @@ class ABFile():
     self.Afile.close()
     self.Bfile.close()
 
-    if (bData[0] == 'S' and bData[len[bData] - 1] == 'E'):
+    if (bData[0] == 'S' and bData[len(bData) - 1] == 'E'):
         removefile(self.Afn)
         newFile = openfile(self.Afn, True)
         newFile.writeat(bData, 0)
